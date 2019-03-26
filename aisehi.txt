@@ -1,0 +1,23 @@
+
+<script>
+$(document).ready(function(){
+	$('#insert').click(function(){
+		var image_name = $('#image').val();
+		if(image_name=='')
+		{
+			alert("please select image")
+			return false;
+		}
+		else
+		{
+			var extension = $('#image').val().split('.').pop().tolowerCase();
+			if(jQuery.inArray(extension,['gif','png','jpg','jepg'])==-1)
+			{
+				alert('Invalid Image file');
+				$('#image').val('');
+				return false;
+			}
+		}
+	});
+)};
+</script>
